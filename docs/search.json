@@ -1,5 +1,117 @@
 [
   {
+    "objectID": "post.html",
+    "href": "post.html",
+    "title": "Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest",
+    "section": "",
+    "text": "AIS Doctor offers customized data scraping and analysis consulting services for young scholars ,Ph.D students, and small businesses. We have a dedicated team who will take care of your needs and help you with your project."
+  },
+  {
+    "objectID": "post.html#ais-doctor",
+    "href": "post.html#ais-doctor",
+    "title": "Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest",
+    "section": "",
+    "text": "AIS Doctor offers customized data scraping and analysis consulting services for young scholars ,Ph.D students, and small businesses. We have a dedicated team who will take care of your needs and help you with your project."
+  },
+  {
+    "objectID": "post.html#why-web-scraping",
+    "href": "post.html#why-web-scraping",
+    "title": "Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest",
+    "section": "Why web scraping?",
+    "text": "Why web scraping?\nDo you spend a significant amount of your budget for collecting data? If so, there might be a more efficient way to do that by leveraging r or Python."
+  },
+  {
+    "objectID": "post.html#why-not-coping-pasting",
+    "href": "post.html#why-not-coping-pasting",
+    "title": "Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest",
+    "section": "Why not coping & pasting?",
+    "text": "Why not coping & pasting?\nFor data in simple format or smaller size, the simplest approach is to copy and paste."
+  },
+  {
+    "objectID": "post.html#data-collection-using-public-apis",
+    "href": "post.html#data-collection-using-public-apis",
+    "title": "Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest",
+    "section": "Data collection using public APIs",
+    "text": "Data collection using public APIs\nWebsites like Yahoo finance, Google Trends, Reddit, and many others have public APIs that facilitate data collection using open source software and API keys."
+  },
+  {
+    "objectID": "post.html#in-case-you-never-used-r-before",
+    "href": "post.html#in-case-you-never-used-r-before",
+    "title": "Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest",
+    "section": "In case you never used R before",
+    "text": "In case you never used R before\n\n1 + 1\n\n[1] 2\n\n\n\n## print a string\nstr &lt;- \"hello, my friends!\"\nprint(str)\n\n[1] \"hello, my friends!\"\n\n## show us the date for today\nformat(Sys.Date(), \"%c\")\n\n[1] \"Tue Oct  8 00:00:00 2024\""
+  },
+  {
+    "objectID": "post.html#in-case-you-never-used-r-before-continued",
+    "href": "post.html#in-case-you-never-used-r-before-continued",
+    "title": "Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest",
+    "section": "In case you never used R before (continued)",
+    "text": "In case you never used R before (continued)\n\n# install.packages(\"calendR\")\nlibrary(calendR)\n\n~~ Package calendR\nVisit https://r-coder.com/ for R tutorials ~~\n\ncalendR() # Defaults to current year"
+  },
+  {
+    "objectID": "post.html#section",
+    "href": "post.html#section",
+    "title": "Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest",
+    "section": "",
+    "text": "Web Scraping - Workflow"
+  },
+  {
+    "objectID": "post.html#scraping-top-finance-news-using-rvest-in-mini-seconds",
+    "href": "post.html#scraping-top-finance-news-using-rvest-in-mini-seconds",
+    "title": "Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest",
+    "section": "Scraping top finance news using rvest in mini-seconds",
+    "text": "Scraping top finance news using rvest in mini-seconds\nrvest is very similar to the Python library of beautifulsoup for Python users. Below is an example of collecting top news from Sina.com and display the top 6 results from the data.\nYou will need some basic knowledge of how html works."
+  },
+  {
+    "objectID": "post.html#scraping-top-finance-news-using-rvest-in-mini-seconds-continued",
+    "href": "post.html#scraping-top-finance-news-using-rvest-in-mini-seconds-continued",
+    "title": "Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest",
+    "section": "Scraping top finance news using rvest in mini-seconds (continued)",
+    "text": "Scraping top finance news using rvest in mini-seconds (continued)\nIn this tutorial, we used rvest, the dplyr packages, and a few lines of syntax to scrape the top news.\nIn R, we can use html_elements along with the CSS selector to identify html elements. Here, “a.linkNewsTopBold” is the html elements associated with the top news at finance.sina.com.cn. Please keep in mind that these elements may change over time."
+  },
+  {
+    "objectID": "post.html#scraping-top-finance-news---loading-packages-continued",
+    "href": "post.html#scraping-top-finance-news---loading-packages-continued",
+    "title": "Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest",
+    "section": "Scraping top finance news - loading packages (continued)",
+    "text": "Scraping top finance news - loading packages (continued)\n\nlibrary(rvest)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union"
+  },
+  {
+    "objectID": "post.html#scraping-top-finance-news-in-a-few-seconds-continued",
+    "href": "post.html#scraping-top-finance-news-in-a-few-seconds-continued",
+    "title": "Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest",
+    "section": "Scraping top finance news in a few seconds (continued)",
+    "text": "Scraping top finance news in a few seconds (continued)\n\n# Define the URL\nurl &lt;- \"https://finance.sina.com.cn/\"\n# Read the webpage content\nwebpage &lt;- read_html(url)\n# identify the html elements using the css selector first\nheadlines &lt;- webpage %&gt;%\n  html_nodes(\"a.linkNewsTopBold\") %&gt;% # adjust the selector based on the HTML structure\n  html_text()\nhead(headlines)\n\n[1] \"指数午后跌幅收窄 证券板块盘中拉升\"                 \n[2] \"直播中国牛市!\"                                     \n[3] \"国家发改委:出台有力有效系列举措 努力提振资本市场\"  \n[4] \"紧扣\\\"两强两严\\\"目标 Q3对291起违法违规采取监管措施\"\n[5] \"我国计划2026年底基本建成国家数据标准体系\"          \n[6] \"多家公司三季报业绩预增 半导体人工智能景气向好\""
+  },
+  {
+    "objectID": "post.html#what-is-next",
+    "href": "post.html#what-is-next",
+    "title": "Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest",
+    "section": "what is next?",
+    "text": "what is next?\nBy leveraging the power of R and open source libraries, you can analyze text data and examine the sentiments and the meaning of textual data in real time. You can also analyze the sentiments of news articles by scraping articles in batch."
+  },
+  {
+    "objectID": "post.html#section-1",
+    "href": "post.html#section-1",
+    "title": "Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest",
+    "section": "",
+    "text": "Link available here:https://utjimmyx.shinyapps.io/jobs/\nNote: refresh if the server is busy."
+  },
+  {
+    "objectID": "post.html#feedback",
+    "href": "post.html#feedback",
+    "title": "Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest",
+    "section": "Feedback",
+    "text": "Feedback\nAt Ais Doctor, we offer customized services in data scraping and analysis. We thank you for your time and effort. Let us know your data collection needs and will help you!"
+  },
+  {
+    "objectID": "post.html#references",
+    "href": "post.html#references",
+    "title": "Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest",
+    "section": "References",
+    "text": "References\ncalendR. https://github.com/R-CoderDotCom/calendR Web scraping using R. https://r4ds.hadley.nz/webscraping"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",

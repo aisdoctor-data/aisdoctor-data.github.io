@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>AIS Doctor Data and Analytics Consulting - About</title>
+<title>AIS Doctor Data and Analytics Consulting - Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -92,11 +126,11 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./post.html" rel="" target="">
+    <a class="nav-link active" href="./post.html" rel="" target="" aria-current="page">
  <span class="menu-text">Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest</span></a>
   </li>  
 </ul>
@@ -117,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest</h1>
 </div>
 
 
@@ -132,37 +166,139 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="what-does-ais-doctor-offer" class="level3">
-<h3 class="anchored" data-anchor-id="what-does-ais-doctor-offer">What does AIS Doctor offer?</h3>
-<p>AIS Doctor offers customized data scraping and analysis consulting services for young scholars, Ph.D.&nbsp;students, and small businesses. We have a dedicated team consisted of data scientists, professors in data analytics and information system. We will take care of your needs and help you move forward with your project.</p>
-<p>Browse <a href="https://rpubs.com/utjimmyx">our sample projects</a> for more info.</p>
+<section id="ais-doctor" class="level2">
+<h2 class="anchored" data-anchor-id="ais-doctor">AIS Doctor</h2>
+<p>AIS Doctor offers customized data scraping and analysis consulting services for young scholars ,Ph.D students, and small businesses. We have a dedicated team who will take care of your needs and help you with your project.</p>
 </section>
-<section id="specializations-include" class="level3">
-<h3 class="anchored" data-anchor-id="specializations-include">Specializations include:</h3>
-<ul>
-<li>Data Scraping/Crawling using R or Python</li>
-<li>Data Analysis &amp; modeling</li>
-<li>Statistical modeling</li>
-<li>Short courses and workshops for business professionals</li>
-<li>Independent research/analysis</li>
-</ul>
+<section id="why-web-scraping" class="level2">
+<h2 class="anchored" data-anchor-id="why-web-scraping">Why web scraping?</h2>
+<p>Do you spend a significant amount of your budget for collecting data? If so, there might be a more efficient way to do that by leveraging r or Python.</p>
 </section>
-<section id="section" class="level1">
-<h1></h1>
-<p><left> <img src="image/scraping.jpg" class="img-fluid" width="250"></left></p>
-<section id="background" class="level3">
-<h3 class="anchored" data-anchor-id="background">Background</h3>
-<ul>
-<li>Extensive training and experience in analytics research, teaching, and outreach</li>
-<li>Authors/co-authors of over 40 peer-reviewed articles focusing on applied consulting research</li>
-</ul>
+<section id="why-not-coping-pasting" class="level2">
+<h2 class="anchored" data-anchor-id="why-not-coping-pasting">Why not coping &amp; pasting?</h2>
+<p>For data in simple format or smaller size, the simplest approach is to copy and paste.</p>
 </section>
-<section id="want-to-get-started-on-a-project" class="level3">
-<h3 class="anchored" data-anchor-id="want-to-get-started-on-a-project">Want to get started on a project?</h3>
-<p><a href="flymonkeyweb@gmail.com">Schedule a 30-minute call with AIS Doctor</a> so we can learn more about your project.</p>
+<section id="data-collection-using-public-apis" class="level2">
+<h2 class="anchored" data-anchor-id="data-collection-using-public-apis">Data collection using public APIs</h2>
+<p>Websites like Yahoo finance, Google Trends, Reddit, and many others have public APIs that facilitate data collection using open source software and API keys.</p>
+</section>
+<section id="in-case-you-never-used-r-before" class="level2">
+<h2 class="anchored" data-anchor-id="in-case-you-never-used-r-before">In case you never used R before</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## print a string</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>str <span class="ot">&lt;-</span> <span class="st">"hello, my friends!"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(str)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "hello, my friends!"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## show us the date for today</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">"%c"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Tue Oct  8 00:00:00 2024"</code></pre>
+</div>
+</div>
+</section>
+<section id="in-case-you-never-used-r-before-continued" class="level2">
+<h2 class="anchored" data-anchor-id="in-case-you-never-used-r-before-continued">In case you never used R before (continued)</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("calendR")</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(calendR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>~~ Package calendR
+Visit https://r-coder.com/ for R tutorials ~~</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calendR</span>() <span class="co"># Defaults to current year</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="post_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/scraping.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Web Scraping - Workflow</figcaption>
+</figure>
+</div>
+</section>
+<section id="scraping-top-finance-news-using-rvest-in-mini-seconds" class="level2">
+<h2 class="anchored" data-anchor-id="scraping-top-finance-news-using-rvest-in-mini-seconds">Scraping top finance news using rvest in mini-seconds</h2>
+<p>rvest is very similar to the Python library of beautifulsoup for Python users. Below is an example of collecting top news from Sina.com and display the top 6 results from the data.</p>
+<p>You will need some basic knowledge of how html works.</p>
+</section>
+<section id="scraping-top-finance-news-using-rvest-in-mini-seconds-continued" class="level2">
+<h2 class="anchored" data-anchor-id="scraping-top-finance-news-using-rvest-in-mini-seconds-continued">Scraping top finance news using rvest in mini-seconds (continued)</h2>
+<p>In this tutorial, we used rvest, the dplyr packages, and a few lines of syntax to scrape the top news.</p>
+<p>In R, we can use html_elements along with the CSS selector to identify html elements. Here, “a.linkNewsTopBold” is the html elements associated with the top news at finance.sina.com.cn. Please keep in mind that these elements may change over time.</p>
+</section>
+<section id="scraping-top-finance-news---loading-packages-continued" class="level2">
+<h2 class="anchored" data-anchor-id="scraping-top-finance-news---loading-packages-continued">Scraping top finance news - loading packages (continued)</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rvest)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+</div>
+</section>
+<section id="scraping-top-finance-news-in-a-few-seconds-continued" class="level2">
+<h2 class="anchored" data-anchor-id="scraping-top-finance-news-in-a-few-seconds-continued">Scraping top finance news in a few seconds (continued)</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the URL</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://finance.sina.com.cn/"</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the webpage content</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>webpage <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># identify the html elements using the css selector first</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>headlines <span class="ot">&lt;-</span> webpage <span class="sc">%&gt;%</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_nodes</span>(<span class="st">"a.linkNewsTopBold"</span>) <span class="sc">%&gt;%</span> <span class="co"># adjust the selector based on the HTML structure</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_text</span>()</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(headlines)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "指数午后跌幅收窄 证券板块盘中拉升"                 
+[2] "直播中国牛市!"                                     
+[3] "国家发改委:出台有力有效系列举措 努力提振资本市场"  
+[4] "紧扣\"两强两严\"目标 Q3对291起违法违规采取监管措施"
+[5] "我国计划2026年底基本建成国家数据标准体系"          
+[6] "多家公司三季报业绩预增 半导体人工智能景气向好"     </code></pre>
+</div>
+</div>
+</section>
+<section id="what-is-next" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-next">what is next?</h2>
+<p>By leveraging the power of R and open source libraries, you can analyze text data and examine the sentiments and the meaning of textual data in real time. You can also analyze the sentiments of news articles by scraping articles in batch.</p>
+</section>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1"></h2>
+<p><img src="image/Job_scraper.png" class="img-fluid" alt="A real time job Scaper using R and R Shiny"> Link available here:https://utjimmyx.shinyapps.io/jobs/</p>
+<p><strong>Note</strong>: refresh if the server is busy.</p>
+</section>
+<section id="feedback" class="level2">
+<h2 class="anchored" data-anchor-id="feedback">Feedback</h2>
+<p>At Ais Doctor, we offer customized services in data scraping and analysis. We thank you for your time and effort. Let us know your data collection needs and will help you!</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p><strong>calendR</strong>. https://github.com/R-CoderDotCom/calendR <strong>Web scraping using R</strong>. https://r4ds.hadley.nz/webscraping</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

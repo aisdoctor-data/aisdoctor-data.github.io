@@ -1,0 +1,100 @@
+---
+title: "Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest"
+toc: false
+---
+
+## AIS Doctor
+
+AIS Doctor offers customized data scraping and analysis consulting services for young scholars ,Ph.D students, and small businesses. We have a dedicated team who will take care of your needs and help you with your project.
+
+## Why web scraping?
+
+Do you spend a significant amount of your budget for collecting data? If so, there might be a more efficient way to do that by leveraging r or Python.
+
+## Why not coping & pasting?
+
+For data in simple format or smaller size, the simplest approach is to copy and paste.
+
+## Data collection using public APIs
+
+Websites like Yahoo finance, Google Trends, Reddit, and many others have public APIs that facilitate data collection using open source software and API keys.
+
+## In case you never used R before
+
+```{r, echo=T}
+1 + 1
+```
+
+```{r, echo=T}
+## print a string
+str <- "hello, my friends!"
+print(str)
+## show us the date for today
+format(Sys.Date(), "%c")
+
+
+```
+
+## In case you never used R before (continued)
+
+```{r, echo=T}
+# install.packages("calendR")
+library(calendR)
+calendR() # Defaults to current year
+```
+
+## 
+
+![Web Scraping - Workflow](image/scraping.jpg)
+
+## Scraping top finance news using rvest in mini-seconds
+
+rvest is very similar to the Python library of beautifulsoup for Python users. Below is an example of collecting top news from Sina.com and display the top 6 results from the data.
+
+You will need some basic knowledge of how html works.
+
+## Scraping top finance news using rvest in mini-seconds (continued)
+
+In this tutorial, we used rvest, the dplyr packages, and a few lines of syntax to scrape the top news.
+
+In R, we can use html_elements along with the CSS selector to identify html elements. Here, "a.linkNewsTopBold" is the html elements associated with the top news at finance.sina.com.cn. Please keep in mind that these elements may change over time.
+
+## Scraping top finance news - loading packages (continued)
+
+```{r, echo=T}
+library(rvest)
+library(dplyr)
+
+```
+
+## Scraping top finance news in a few seconds (continued)
+
+```{r, echo=T}
+# Define the URL
+url <- "https://finance.sina.com.cn/"
+# Read the webpage content
+webpage <- read_html(url)
+# identify the html elements using the css selector first
+headlines <- webpage %>%
+  html_nodes("a.linkNewsTopBold") %>% # adjust the selector based on the HTML structure
+  html_text()
+head(headlines)
+```
+
+## what is next?
+
+By leveraging the power of R and open source libraries, you can analyze text data and examine the sentiments and the meaning of textual data in real time. You can also analyze the sentiments of news articles by scraping articles in batch.
+
+## 
+
+![A real time job Scaper using R and R Shiny](image/Job_scraper.png) Link available here:https://utjimmyx.shinyapps.io/jobs/
+
+**Note**: refresh if the server is busy.
+
+## Feedback
+
+At Ais Doctor, we offer customized services in data scraping and analysis. We thank you for your time and effort. Let us know your data collection needs and will help you!
+
+## References
+
+**calendR**. https://github.com/R-CoderDotCom/calendR **Web scraping using R**. https://r4ds.hadley.nz/webscraping
