@@ -1,6 +1,8 @@
 ---
-title: "Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest"
+title: "Web Scraping - Efficient Web Data Collection using R and rvest"
 toc: false
+date: Sys.Date()
+authors: Dr. Xu & Dr. Parra
 ---
 
 ## AIS Doctor
@@ -21,6 +23,8 @@ Websites like Yahoo finance, Google Trends, Reddit, and many others have public 
 
 ## In case you never used R before
 
+R is a powerful tool for beginners looking to explore various tasks such as performing mathematical calculations, creating new calendars, and printing dates. With R, you can easily carry out basic math functions (like addition, subtraction, and more advanced operations), manage dates, and format them in different ways. By using functions like Sys.Date() for the current date, seq.Date() to create sequences of dates, or libraries like lubridate, you can manage time-related data effectively. R's flexibility makes it accessible for learners to experiment and learn.
+
 ```{r, echo=T}
 1 + 1
 ```
@@ -35,7 +39,6 @@ format(Sys.Date(), "%c")
 
 ```
 
-## In case you never used R before (continued)
 
 ```{r, echo=T}
 # install.packages("calendR")
@@ -57,9 +60,7 @@ You will need some basic knowledge of how html works.
 
 In this tutorial, we used rvest, the dplyr packages, and a few lines of syntax to scrape the top news.
 
-In R, we can use html_elements along with the CSS selector to identify html elements. Here, "a.linkNewsTopBold" is the html elements associated with the top news at finance.sina.com.cn. Please keep in mind that these elements may change over time.
-
-## Scraping top finance news - loading packages (continued)
+## Scraping top finance news - loading packages
 
 ```{r, echo=T}
 library(rvest)
@@ -67,7 +68,13 @@ library(dplyr)
 
 ```
 
-## Scraping top finance news in a few seconds (continued)
+## Scraping top finance news in a few seconds using the rvest package 
+
+In this example, we used R to scrape headlines from a finance website (Sina). First, I defined the URL of the site and read the webpage content using the read_html function. Then, I identified the specific HTML elements (headlines) I wanted by using a CSS selector (a.linkNewsTopBold). Finally, I extracted the text from these elements and displayed the first few headlines using the head function.
+
+In R, we can use html_elements along with the CSS selector to identify html elements. Here, "a.linkNewsTopBold" is the html elements associated with the top news at finance.sina.com.cn. Please keep in mind that these elements may change over time.
+
+We can then export the data to a text file and use it for other purposes. You may find the complete dataset here: https://github.com/utjimmyx/workshop/blob/main/sina_news.txt
 
 ```{r, echo=T}
 # Define the URL
@@ -81,20 +88,28 @@ headlines <- webpage %>%
 head(headlines)
 ```
 
-## what is next?
+## What is next?
 
 By leveraging the power of R and open source libraries, you can analyze text data and examine the sentiments and the meaning of textual data in real time. You can also analyze the sentiments of news articles by scraping articles in batch.
 
-## 
+## What else can I do with R?
 
-![A real time job Scaper using R and R Shiny](image/Job_scraper.png) Link available here:https://utjimmyx.shinyapps.io/jobs/
+Well, R offers you encough flexibility when it comes to App development as well. For instance, you can leverage R and R Shiny (an advanced web API framework) for user-friendly Apps. 
+
+Below is a screenshot of an App that lets you scrape LinkedIn jobs and was built using R and R Shiny by us.
+
+![A real time job Scaper using R and R Shiny](image/Job_scraper.png) You can visit the App available here: here:https://utjimmyx.shinyapps.io/jobs/
 
 **Note**: refresh if the server is busy.
 
 ## Feedback
 
-At Ais Doctor, we offer customized services in data scraping and analysis. We thank you for your time and effort. Let us know your data collection needs and will help you!
+At AIS Doctor, we offer customized services in data scraping and analysis. We thank you for your time and effort. Let us know your data collection needs and will help you!
 
 ## References
 
-**calendR**. https://github.com/R-CoderDotCom/calendR **Web scraping using R**. https://r4ds.hadley.nz/webscraping
+**calendR**. https://github.com/R-CoderDotCom/calendR
+
+**Web scraping using R**. https://r4ds.hadley.nz/webscraping
+
+**Quarto - Using R - Overview**.  https://quarto.org/docs/computations/r.html

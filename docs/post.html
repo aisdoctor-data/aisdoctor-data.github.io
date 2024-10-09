@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>AIS Doctor Data and Analytics Consulting - Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest</title>
+<title>AIS Doctor Data and Analytics Consulting - Web Scraping - Efficient Web Data Collection using R and rvest</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -131,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./post.html" rel="" target="" aria-current="page">
- <span class="menu-text">Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest</span></a>
+ <span class="menu-text">Web Scraping - Efficient Web Data Collection using R and rvest</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools">
@@ -151,14 +151,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Web Scraping - Understanding the Mystery of Web Data Collection using R and rvest</h1>
+<h1 class="title">Web Scraping - Efficient Web Data Collection using R and rvest</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dr.&nbsp;Xu &amp; Dr.&nbsp;Parra </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Invalid Date</p>
+    </div>
+  </div>
   
     
   </div>
@@ -184,6 +196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="in-case-you-never-used-r-before" class="level2">
 <h2 class="anchored" data-anchor-id="in-case-you-never-used-r-before">In case you never used R before</h2>
+<p>R is a powerful tool for beginners looking to explore various tasks such as performing mathematical calculations, creating new calendars, and printing dates. With R, you can easily carry out basic math functions (like addition, subtraction, and more advanced operations), manage dates, and format them in different ways. By using functions like Sys.Date() for the current date, seq.Date() to create sequences of dates, or libraries like lubridate, you can manage time-related data effectively. R’s flexibility makes it accessible for learners to experiment and learn.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -200,12 +213,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## show us the date for today</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">"%c"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Tue Oct  8 00:00:00 2024"</code></pre>
+<pre><code>[1] "Wed Oct  9 00:00:00 2024"</code></pre>
 </div>
 </div>
-</section>
-<section id="in-case-you-never-used-r-before-continued" class="level2">
-<h2 class="anchored" data-anchor-id="in-case-you-never-used-r-before-continued">In case you never used R before (continued)</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("calendR")</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(calendR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -236,10 +246,9 @@ Visit https://r-coder.com/ for R tutorials ~~</code></pre>
 <section id="scraping-top-finance-news-using-rvest-in-mini-seconds-continued" class="level2">
 <h2 class="anchored" data-anchor-id="scraping-top-finance-news-using-rvest-in-mini-seconds-continued">Scraping top finance news using rvest in mini-seconds (continued)</h2>
 <p>In this tutorial, we used rvest, the dplyr packages, and a few lines of syntax to scrape the top news.</p>
-<p>In R, we can use html_elements along with the CSS selector to identify html elements. Here, “a.linkNewsTopBold” is the html elements associated with the top news at finance.sina.com.cn. Please keep in mind that these elements may change over time.</p>
 </section>
-<section id="scraping-top-finance-news---loading-packages-continued" class="level2">
-<h2 class="anchored" data-anchor-id="scraping-top-finance-news---loading-packages-continued">Scraping top finance news - loading packages (continued)</h2>
+<section id="scraping-top-finance-news---loading-packages" class="level2">
+<h2 class="anchored" data-anchor-id="scraping-top-finance-news---loading-packages">Scraping top finance news - loading packages</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rvest)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -259,8 +268,11 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 </div>
 </section>
-<section id="scraping-top-finance-news-in-a-few-seconds-continued" class="level2">
-<h2 class="anchored" data-anchor-id="scraping-top-finance-news-in-a-few-seconds-continued">Scraping top finance news in a few seconds (continued)</h2>
+<section id="scraping-top-finance-news-in-a-few-seconds-using-the-rvest-package" class="level2">
+<h2 class="anchored" data-anchor-id="scraping-top-finance-news-in-a-few-seconds-using-the-rvest-package">Scraping top finance news in a few seconds using the rvest package</h2>
+<p>In this example, we used R to scrape headlines from a finance website (Sina). First, I defined the URL of the site and read the webpage content using the read_html function. Then, I identified the specific HTML elements (headlines) I wanted by using a CSS selector (a.linkNewsTopBold). Finally, I extracted the text from these elements and displayed the first few headlines using the head function.</p>
+<p>In R, we can use html_elements along with the CSS selector to identify html elements. Here, “a.linkNewsTopBold” is the html elements associated with the top news at finance.sina.com.cn. Please keep in mind that these elements may change over time.</p>
+<p>We can then export the data to a text file and use it for other purposes. You may find the complete dataset here: https://github.com/utjimmyx/workshop/blob/main/sina_news.txt</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the URL</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://finance.sina.com.cn/"</span></span>
@@ -272,31 +284,35 @@ Attaching package: 'dplyr'</code></pre>
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_text</span>()</span>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(headlines)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "指数午后跌幅收窄 证券板块盘中拉升"                 
-[2] "直播中国牛市!"                                     
-[3] "国家发改委:出台有力有效系列举措 努力提振资本市场"  
-[4] "紧扣\"两强两严\"目标 Q3对291起违法违规采取监管措施"
-[5] "我国计划2026年底基本建成国家数据标准体系"          
-[6] "多家公司三季报业绩预增 半导体人工智能景气向好"     </code></pre>
+<pre><code>[1] "节后经济形势座谈会 哪些信息值得关注"               
+[2] "指数巨量回调 两市成交额超2.9万亿元"                
+[3] "直播中国牛市!"                                     
+[4] "国家发改委:出台有力有效系列举措 努力提振资本市场"  
+[5] "紧扣\"两强两严\"目标 Q3对291起违法违规采取监管措施"
+[6] "我国计划2026年底基本建成国家数据标准体系"          </code></pre>
 </div>
 </div>
 </section>
 <section id="what-is-next" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-next">what is next?</h2>
+<h2 class="anchored" data-anchor-id="what-is-next">What is next?</h2>
 <p>By leveraging the power of R and open source libraries, you can analyze text data and examine the sentiments and the meaning of textual data in real time. You can also analyze the sentiments of news articles by scraping articles in batch.</p>
 </section>
-<section id="section-1" class="level2">
-<h2 class="anchored" data-anchor-id="section-1"></h2>
-<p><img src="image/Job_scraper.png" class="img-fluid" alt="A real time job Scaper using R and R Shiny"> Link available here:https://utjimmyx.shinyapps.io/jobs/</p>
+<section id="what-else-can-i-do-with-r" class="level2">
+<h2 class="anchored" data-anchor-id="what-else-can-i-do-with-r">What else can I do with R?</h2>
+<p>Well, R offers you encough flexibility when it comes to App development as well. For instance, you can leverage R and R Shiny (an advanced web API framework) for user-friendly Apps.</p>
+<p>Below is a screenshot of an App that lets you scrape LinkedIn jobs and was built using R and R Shiny by us.</p>
+<p><img src="image/Job_scraper.png" class="img-fluid" alt="A real time job Scaper using R and R Shiny"> You can visit the App available here: here:https://utjimmyx.shinyapps.io/jobs/</p>
 <p><strong>Note</strong>: refresh if the server is busy.</p>
 </section>
 <section id="feedback" class="level2">
 <h2 class="anchored" data-anchor-id="feedback">Feedback</h2>
-<p>At Ais Doctor, we offer customized services in data scraping and analysis. We thank you for your time and effort. Let us know your data collection needs and will help you!</p>
+<p>At AIS Doctor, we offer customized services in data scraping and analysis. We thank you for your time and effort. Let us know your data collection needs and will help you!</p>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<p><strong>calendR</strong>. https://github.com/R-CoderDotCom/calendR <strong>Web scraping using R</strong>. https://r4ds.hadley.nz/webscraping</p>
+<p><strong>calendR</strong>. https://github.com/R-CoderDotCom/calendR</p>
+<p><strong>Web scraping using R</strong>. https://r4ds.hadley.nz/webscraping</p>
+<p><strong>Quarto - Using R - Overview</strong>. https://quarto.org/docs/computations/r.html</p>
 
 
 </section>
