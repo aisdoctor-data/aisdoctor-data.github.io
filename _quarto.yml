@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "AIS Doctor Data and Analytics Consulting"
+  site-url: https://aisdoctor-data.github.io
+  favicon: image/scraping.jpg  
+  navbar:
+    logo: image/scraping.jpg 
+    right:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - posts.qmd
+  page-footer: 
+    right: "Designed with [Quarto](https://quarto.org/)."
+    left: "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)"
+format:
+  html:
+    theme: 
+      light: minty
+      dark: slate
+    css: styles.css
+    toc: true 
+

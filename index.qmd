@@ -1,0 +1,50 @@
+---
+pagetitle: "AIS Doctor Data and Analytics Consulting"
+page-layout: custom
+section-divs: false
+editor: source
+sidebar: false
+search: false
+repo-actions: false
+description: | 
+  Welcome to AIS Doctor Data Services! We offer a range of services, including web data scraping, social media data collection, and analytics consulting for Ph.D. students and early-career scholars.
+image: image/scraping.jpg
+listing:
+  - id: post
+    contents: 
+    - /post
+    - "index.qmd"
+    sort: "date desc"
+    type: grid
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    max-items: 6
+    feed: false
+
+toc: false
+---
+
+<center>
+
+::: pullout-text
+::: pullout-container
+::: {.pullout-block .black-background}
+![](image/scraping.jpg)
+
+## Efficient, innovative, and customized
+
+#### We support Ph.D. students and young scholars by providing customized data scraping and analytics support.
+
+#### Your time is precious. We can help Ph.D. students and young scholars to make more impact with meaningful data.
+
+# 
+
+::: button
+[Learn more.](about.qmd){.btn .btn-outline-primary .btn role="button"}
+:::
+:::
+:::
+:::
+
+</center>
